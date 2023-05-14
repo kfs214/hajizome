@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import MUIAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";

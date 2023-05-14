@@ -3,18 +3,27 @@
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
-import HAjizomeAppBar from "./components/molecules/HAjizomeAppBar";
 import theme from "./theme";
+import AppBar from "./components/molecules/AppBar";
+import TextField from "./components/molecules/TextField";
 
 export default function Home() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <header>
-        <HAjizomeAppBar />
+        <AppBar />
       </header>
       <main>
-        <p>this is main tag</p>
+        {/* TODO 動作確認サンプルなので用が済んだら除却 */}
+        <TextField
+          label="Title"
+          // value={`aaaa\naaaaa`}
+          // helperText="エラーメッセージ"
+          // error
+          // multiline
+          handleChange={() => {}}
+        />
       </main>
     </ThemeProvider>
   );

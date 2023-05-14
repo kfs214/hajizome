@@ -15,15 +15,7 @@ export default function Home() {
         <AppBar />
       </header>
       <main>
-        {/* TODO 動作確認サンプルなので用が済んだら除却 */}
-        <TextField
-          label="Title"
-          // value={`aaaa\naaaaa`}
-          // helperText="エラーメッセージ"
-          // error
-          // multiline
-          handleChange={() => {}}
-        />
+        <p>this is main tag</p>
       </main>
     </ThemeProvider>
   );

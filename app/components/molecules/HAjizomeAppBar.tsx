@@ -12,7 +12,12 @@ export default function HAjizomeAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Image src="/images/funchan.svg" width={32} height={32} alt="logo" />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            ml={1}
+            sx={{ flexGrow: 1, color: "white", fontWeight: "bold" }}
+          >
             HAjizome2
           </Typography>
         </Toolbar>

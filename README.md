@@ -1,6 +1,12 @@
 # HAjizome 2 (#DDA52D)
 
-Util to generate HTML elements for WordPress post.
+HAjizome 2 is a utility tool that generates HTML elements for WordPress posts. The tool simplifies the process of creating posts by allowing users to easily generate the necessary HTML elements.
+
+## CI/CD
+
+Continuous deployment with Amplify Console has been set up for HAjizome 2. The develop branch has been connected to Amplify Console, so any changes pushed to this branch will be automatically deployed to the development environment.
+
+Amplify Console makes it easy to manage the deployment process for HAjizome 2, allowing developers to focus on building new features and improving the tool's functionality.
 
 ## about Next.js
 

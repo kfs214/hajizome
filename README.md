@@ -1,6 +1,18 @@
+# HAjizome 2 (#DDA52D)
+
+HAjizome 2 is a utility tool that generates HTML elements for WordPress posts. The tool simplifies the process of creating posts by allowing users to easily generate the necessary HTML elements.
+
+## CI/CD
+
+Continuous deployment with Amplify Console has been set up for HAjizome 2. The develop branch has been connected to Amplify Console, so any changes pushed to this branch will be automatically deployed to the development environment.
+
+Amplify Console makes it easy to manage the deployment process for HAjizome 2, allowing developers to focus on building new features and improving the tool's functionality.
+
+## about Next.js
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+### Getting Started
 
 First, run the development server:
 
@@ -16,9 +28,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
+### Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
@@ -26,9 +36,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

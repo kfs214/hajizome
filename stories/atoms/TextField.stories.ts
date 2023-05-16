@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import TextField from "../../app/components/molecules/TextField";
+import TextField from "../../app/components/atoms/TextField";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof TextField> = {
-  title: "Molecules/TextField",
+  title: "Atoms/TextField",
   component: TextField,
   tags: ["autodocs"],
 };

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import dayjs from "dayjs";
 
 import DatePicker from "../../app/components/atoms/DatePicker";

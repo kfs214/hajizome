@@ -32,8 +32,7 @@ export const Body: Story = {
   args: {
     label: "Body",
     multiline: true,
-    value: `
-###### やったこと
+    value: `###### やったこと
 キャンプ
 
 ###### 行った場所

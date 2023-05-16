@@ -17,15 +17,15 @@ type Story = StoryObj<typeof DatePicker>;
 export const Primary: Story = {
   args: {
     label: "Date",
-    value: null,
+    value: dayjs("2023-05-14"),
     handleChange: () => {},
   },
 };
 
-export const Filled: Story = {
+export const Empty: Story = {
   args: {
     label: "Date",
-    value: dayjs("2023-05-14"),
+    value: null,
     handleChange: () => {},
   },
 };

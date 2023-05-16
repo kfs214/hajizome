@@ -22,7 +22,7 @@ export default function TextField(props: Props) {
   return (
     <Box component="form" autoComplete="off">
       <MUITextField
-        variant="standard"
+        variant="outlined"
         label={label}
         value={value}
         helperText={helperText}

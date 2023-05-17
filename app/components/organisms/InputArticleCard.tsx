@@ -42,6 +42,7 @@ export default function InputArticleCard(props: Props) {
         />
         <TextField
           label="Body"
+          multiline
           value={body}
           helperText={bodyErrorMessage}
           error={!!bodyErrorMessage}

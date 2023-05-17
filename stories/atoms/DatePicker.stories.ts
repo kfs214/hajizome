@@ -29,3 +29,17 @@ export const Empty: Story = {
     onChange: () => {},
   },
 };
+
+export const Error: Story = {
+  args: {
+    label: "Date",
+    value: null,
+    onChange: () => {},
+    slotProps: {
+      textField: {
+        helperText: "dateErrorMessage",
+        error: true,
+      },
+    },
+  },
+};

@@ -18,7 +18,7 @@ export const Primary: Story = {
   args: {
     label: "Date",
     value: dayjs("2023-05-14"),
-    handleChange: () => {},
+    onChange: () => {},
   },
 };
 
@@ -26,6 +26,6 @@ export const Empty: Story = {
   args: {
     label: "Date",
     value: null,
-    handleChange: () => {},
+    onChange: () => {},
   },
 };

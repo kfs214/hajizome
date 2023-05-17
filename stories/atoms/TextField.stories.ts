@@ -17,14 +17,14 @@ export const Primary: Story = {
   args: {
     label: "Title",
     value: "あとがき",
-    handleChange: () => {},
+    onChange: () => {},
   },
 };
 
 export const TitleEmpty: Story = {
   args: {
     label: "Title",
-    handleChange: () => {},
+    onChange: () => {},
   },
 };
 
@@ -37,7 +37,7 @@ export const Body: Story = {
 
 ###### 行った場所
 北海道`,
-    handleChange: () => {},
+    onChange: () => {},
   },
 };
 
@@ -47,6 +47,6 @@ export const BodyEmpty: Story = {
     error: true,
     multiline: true,
     helperText: '"Body" is Empty!',
-    handleChange: () => {},
+    onChange: () => {},
   },
 };

@@ -31,10 +31,12 @@ export default function InputArticleCard(props: Props) {
   } = props;
 
   return (
-    <Card>
+    <Card sx={{ maxWidth: "lg" }}>
       <CardContent>
         <TextField
           label="Title"
+          fullWidth
+          margin="normal"
           value={title}
           helperText={titleErrorMessage}
           error={!!titleErrorMessage}
@@ -42,6 +44,8 @@ export default function InputArticleCard(props: Props) {
         />
         <TextField
           label="Body"
+          fullWidth
+          margin="normal"
           multiline
           value={body}
           helperText={bodyErrorMessage}
@@ -55,6 +59,8 @@ export default function InputArticleCard(props: Props) {
             textField: {
               helperText: dateErrorMessage,
               error: !!dateErrorMessage,
+              fullWidth: true,
+              margin: "normal",
             },
           }}
           onChange={handleChangeDate}

@@ -18,7 +18,6 @@ export const Primary: Story = {
   args: {
     label: "Date",
     value: dayjs("2023-05-14"),
-    onChange: () => {},
   },
 };
 
@@ -26,7 +25,6 @@ export const Empty: Story = {
   args: {
     label: "Date",
     value: null,
-    onChange: () => {},
   },
 };
 
@@ -34,7 +32,6 @@ export const Error: Story = {
   args: {
     label: "Date",
     value: null,
-    onChange: () => {},
     slotProps: {
       textField: {
         helperText: "dateErrorMessage",

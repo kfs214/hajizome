@@ -17,14 +17,12 @@ export const Primary: Story = {
   args: {
     label: "Title",
     value: "あとがき",
-    onChange: () => {},
   },
 };
 
 export const TitleEmpty: Story = {
   args: {
     label: "Title",
-    onChange: () => {},
   },
 };
 
@@ -37,7 +35,6 @@ export const Body: Story = {
 
 ###### 行った場所
 北海道`,
-    onChange: () => {},
   },
 };
 
@@ -47,6 +44,5 @@ export const BodyEmpty: Story = {
     error: true,
     multiline: true,
     helperText: '"Body" is Empty!',
-    onChange: () => {},
   },
 };

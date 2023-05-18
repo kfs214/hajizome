@@ -17,6 +17,7 @@ type Story = StoryObj<typeof InputArticleCard>;
 export const Primary: Story = {
   args: {
     article: {
+      id: 1,
       title: "あとがき",
       body: `これからどうしていきたいかを考えた。公私ともに。
 ずっと考えている気がする。
@@ -34,6 +35,7 @@ Wordpress API`,
 export const LongBody: Story = {
   args: {
     article: {
+      id: 1,
       title: "これからどうしていきたいか",
       body: `と尋ねられたら
 
@@ -71,6 +73,7 @@ export const LongBody: Story = {
 export const LongRow: Story = {
   args: {
     article: {
+      id: 1,
       title: "酒、タバコ、肉、魚、セックス",
       body: `年齢制限はあるとはいえ、酒、タバコは自己責任でほどよく楽しむ分には誰にとやかく言われるものでもない
 セックスだって、宗教観の違いはあれど個人の自由
@@ -89,6 +92,7 @@ export const LongRow: Story = {
 export const AllErrors: Story = {
   args: {
     article: {
+      id: 1,
       title: "",
       titleErrorMessage: "titleErrorMessage",
       body: "",
@@ -102,6 +106,7 @@ export const AllErrors: Story = {
 export const TitleError: Story = {
   args: {
     article: {
+      id: 1,
       title: "",
       titleErrorMessage: "titleErrorMessage",
       body: `###### やったこと
@@ -117,6 +122,7 @@ export const TitleError: Story = {
 export const BodyError: Story = {
   args: {
     article: {
+      id: 1,
       title: "あとがき",
       body: "",
       bodyErrorMessage: "bodyErrorMessage",
@@ -128,6 +134,7 @@ export const BodyError: Story = {
 export const DateError: Story = {
   args: {
     article: {
+      id: 1,
       title: "あとがき",
       body: `###### やったこと
 キャンプ
@@ -143,6 +150,7 @@ export const DateError: Story = {
 export const TitleBodyError: Story = {
   args: {
     article: {
+      id: 1,
       title: "",
       titleErrorMessage: "titleErrorMessage",
       body: "",
@@ -155,6 +163,7 @@ export const TitleBodyError: Story = {
 export const TitleDateError: Story = {
   args: {
     article: {
+      id: 1,
       title: "",
       titleErrorMessage: "titleErrorMessage",
       body: `###### やったこと
@@ -171,6 +180,7 @@ export const TitleDateError: Story = {
 export const BodyDateError: Story = {
   args: {
     article: {
+      id: 1,
       title: "あとがき",
       body: "",
       bodyErrorMessage: "bodyErrorMessage",

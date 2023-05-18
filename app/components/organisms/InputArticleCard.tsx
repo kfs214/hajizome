@@ -9,7 +9,6 @@ import { Article } from "../types";
 type Props = {
   article: Article;
 
-  // TODO 親のハンドラ定義に応じて変更
   handleChangeTitle: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleChangeBody: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleChangeDate: (newValue: Dayjs | null) => void;

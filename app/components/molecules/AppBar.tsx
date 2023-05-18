@@ -1,8 +1,8 @@
-import Image from "next/image";
 import MUIAppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import Image from "next/image";
 
 export default function HAjizomeAppBar() {
   return (

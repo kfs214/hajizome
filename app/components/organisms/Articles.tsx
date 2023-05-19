@@ -1,28 +1,40 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
 
+import AddArticle from "@/app/components/atoms/AddArticle";
 import ArticleCards from "@/app/components/organisms/ArticleCards";
 import { Article } from "@/app/components/types";
 
+let nextId = 0;
+
 const initialArticles = [
-  { id: 1, title: "", body: "", date: null },
+  // eslint-disable-next-line no-plusplus
+  { id: nextId++, title: "", body: "", date: null },
 ] as Article[];
 
 export default function Articles() {
   const [articles, setArticles] = useState(initialArticles);
   const [showGeneratedHTMLCard, setShowGeneratedHTMLCard] = useState(false);
 
-  if (showGeneratedHTMLCard) {
-    return (
-      <div>
-        <p>showGeneratedHTMLCard</p>
-      </div>
-    );
-  }
+  const handleAddArticle = () => {
+    setArticles((prev) => [
+      ...prev,
+      // eslint-disable-next-line no-plusplus
+      { id: nextId++, title: "", body: "", date: null },
+    ]);
+  };
 
   return (
-    <Box p={1}>
-      <ArticleCards articles={articles} setArticles={setArticles} />
-    </Box>
+    <>
+      {showGeneratedHTMLCard && (
+        <div>
+          <p>showGeneratedHTMLCard</p>
+        </div>
+      )}
+      <Box p={1}>
+        <ArticleCards articles={articles} setArticles={setArticles} />
+        <AddArticle handleAddArticle={handleAddArticle} />
+      </Box>
+    </>
   );
 }

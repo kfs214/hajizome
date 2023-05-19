@@ -34,6 +34,7 @@ export default function InputArticleCard(props: Props) {
       <CardContent>
         <TextField
           label="Title"
+          // TODO スタイルをどこで指定すべきか？検討
           fullWidth
           margin="normal"
           value={title}

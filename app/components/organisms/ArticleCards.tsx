@@ -26,13 +26,15 @@ function composeErrorMessage(updatedValue: string | Dayjs | null) {
     return "This field is Required.";
   }
 
-  return;
+  return undefined;
 }
 
 export default function ArticleCards(props: Props) {
   const { articles, setArticles } = props;
 
+  // TODO エラー箇所にスクロール
   const articleComponents = articles.map((cardArticle) => {
+    // TODO 切り出せないか検討
     const handleChangeTitle = ({
       target: { value },
     }: React.ChangeEvent<HTMLInputElement>) => {

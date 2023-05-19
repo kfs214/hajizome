@@ -6,6 +6,7 @@ export default function TextField(
 ) {
   return (
     <Box component="form" autoComplete="off">
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <MUITextField variant="outlined" {...props} />
     </Box>
   );

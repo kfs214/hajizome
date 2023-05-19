@@ -1,21 +1,26 @@
 "use client";
 
-import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@mui/material/styles";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
-import HAjizomeAppBar from "./components/molecules/HAjizomeAppBar";
-import theme from "./theme";
+import AppBar from "@/app/components/molecules/AppBar";
+import Articles from "@/app/components/organisms/Articles";
+import theme from "@/app/theme";
 
 export default function Home() {
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <header>
-        <HAjizomeAppBar />
-      </header>
-      <main>
-        <p>this is main tag</p>
-      </main>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <CssBaseline />
+        <header>
+          <AppBar />
+        </header>
+        <main>
+          <Articles />
+        </main>
+      </LocalizationProvider>
     </ThemeProvider>
   );
 }

@@ -1,5 +1,3 @@
-import "./globals.css";
-
 export const metadata = {
   title: "HAjizome",
   description: "Util to generate HTML elements for WordPress post",

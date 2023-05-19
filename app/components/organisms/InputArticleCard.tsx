@@ -29,6 +29,7 @@ export default function InputArticleCard(props: Props) {
     handleChangeDate,
   } = props;
 
+  // TODO 削除機能を追加
   return (
     <Card sx={{ maxWidth: "lg" }}>
       <CardContent>

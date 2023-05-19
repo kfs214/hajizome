@@ -31,7 +31,7 @@ export default function Articles() {
           <p>showGeneratedHTMLCard</p>
         </div>
       )}
-      <Box p={1}>
+      <Box p={1} pb={12}>
         <ArticleCards articles={articles} setArticles={setArticles} />
         <AddArticle handleAddArticle={handleAddArticle} />
       </Box>

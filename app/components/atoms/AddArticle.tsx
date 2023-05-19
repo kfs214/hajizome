@@ -8,7 +8,16 @@ type Props = {
 
 export default function AddArticle({ handleAddArticle }: Props) {
   return (
-    <Fab color="secondary" aria-label="add" onClick={handleAddArticle}>
+    <Fab
+      color="secondary"
+      aria-label="add"
+      sx={{
+        position: "fixed",
+        bottom: (theme) => theme.spacing(2),
+        right: (theme) => theme.spacing(2),
+      }}
+      onClick={handleAddArticle}
+    >
       <AddIcon />
     </Fab>
   );

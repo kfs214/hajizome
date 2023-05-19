@@ -5,8 +5,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 
-import AppBar from "./components/molecules/AppBar";
-import theme from "./theme";
+import AppBar from "@/app/components/molecules/AppBar";
+import Articles from "@/app/components/organisms/Articles";
+import theme from "@/app/theme";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
           <AppBar />
         </header>
         <main>
-          <p>this is main tag</p>
+          <Articles />
         </main>
       </LocalizationProvider>
     </ThemeProvider>

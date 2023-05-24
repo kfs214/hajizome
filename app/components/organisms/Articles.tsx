@@ -1,11 +1,15 @@
 import { Box } from "@mui/material";
-import { useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 
 import AddArticle from "@/app/components/atoms/AddArticle";
 import ArticleCards from "@/app/components/organisms/ArticleCards";
+import GeneratedHTMLModal from "@/app/components/organisms/GeneratedHTMLModal";
 import { Article } from "@/app/components/types";
 
-type Props = { showGeneratedHTMLCard: boolean };
+type Props = {
+  showGeneratedHTMLCard: boolean;
+  setShowGeneratedHTMLCard: Dispatch<SetStateAction<boolean>>;
+};
 
 let nextId = 0;
 
@@ -14,7 +18,9 @@ const initialArticles = [
   { id: nextId++, title: "", body: "", date: null },
 ] as Article[];
 
-export default function Articles({ showGeneratedHTMLCard }: Props) {
+export default function Articles(props: Props) {
+  const { showGeneratedHTMLCard, setShowGeneratedHTMLCard } = props;
+
   const [articles, setArticles] = useState(initialArticles);
 
   // TODO dateの初期値は最新のものと同じ日付
@@ -28,11 +34,11 @@ export default function Articles({ showGeneratedHTMLCard }: Props) {
 
   return (
     <>
-      {showGeneratedHTMLCard && (
-        <div>
-          <p>showGeneratedHTMLCard</p>
-        </div>
-      )}
+      <GeneratedHTMLModal
+        showGeneratedHTMLCard={showGeneratedHTMLCard}
+        setShowGeneratedHTMLCard={setShowGeneratedHTMLCard}
+        articles={articles}
+      />
       <Box p={1} pb={12}>
         <ArticleCards articles={articles} setArticles={setArticles} />
         <AddArticle handleAddArticle={handleAddArticle} />

@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Dayjs } from "dayjs";
-import { Dispatch } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 // TODO パスの指定方法を統一
 import InputArticleCard from "./InputArticleCard";
@@ -8,7 +8,7 @@ import { Article } from "@/app/components/types";
 
 type Props = {
   articles: Article[];
-  setArticles: Dispatch<React.SetStateAction<Article[]>>;
+  setArticles: Dispatch<SetStateAction<Article[]>>;
 };
 
 function composeNewArticles(prevArticles: Article[], updatedArticle: Article) {

@@ -24,7 +24,10 @@ export default function Home() {
           />
         </header>
         <main>
-          <Articles showGeneratedHTMLCard={showGeneratedHTMLCard} />
+          <Articles
+            showGeneratedHTMLCard={showGeneratedHTMLCard}
+            setShowGeneratedHTMLCard={setShowGeneratedHTMLCard}
+          />
         </main>
       </LocalizationProvider>
     </ThemeProvider>

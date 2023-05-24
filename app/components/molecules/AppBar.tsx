@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
 
+// TODO hooks?
 type Props = {
   showGeneratedHTMLCard: boolean;
   setShowGeneratedHTMLCard: Dispatch<SetStateAction<boolean>>;

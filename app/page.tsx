@@ -16,6 +16,9 @@ const Offset = styled("div")(({ theme }) => theme.mixins.toolbar);
 export default function Home() {
   const [showGeneratedHTMLCard, setShowGeneratedHTMLCard] = useState(false);
 
+  // TODO 自動保存
+  // TODO Text Lint
+
   return (
     <ThemeProvider theme={appTheme}>
       <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ja">

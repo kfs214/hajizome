@@ -24,7 +24,7 @@ export default function Articles(props: Props) {
   const [articles, setArticles] = useState(initialArticles);
 
   const handleAddArticle = () => {
-    const { date: lastArticleDate } = articles.slice(-1)[0];
+    const lastArticleDate = articles.slice(-1)[0]?.date ?? null;
     setArticles((prev) => [
       ...prev,
       // eslint-disable-next-line no-plusplus

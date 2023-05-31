@@ -77,6 +77,11 @@ export default function ArticleCards(props: Props) {
       setArticles(newArticles);
     };
 
+    const handleDeleteArticle = () => {
+      const restArticles = articles.filter(({ id }) => id !== cardArticle.id);
+      setArticles(restArticles);
+    };
+
     return (
       <Box sx={{ my: 2 }} key={cardArticle.id}>
         <InputArticleCard
@@ -84,6 +89,7 @@ export default function ArticleCards(props: Props) {
           handleChangeTitle={handleChangeTitle}
           handleChangeBody={handleChangeBody}
           handleChangeDate={handleChangeDate}
+          handleDeleteArticle={handleDeleteArticle}
         />
       </Box>
     );

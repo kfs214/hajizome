@@ -1,7 +1,9 @@
+import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import IconButton from "@mui/material/IconButton";
+import Stack from "@mui/material/Stack";
 import { Dayjs } from "dayjs";
-
 import DatePicker from "../atoms/DatePicker";
 import TextField from "../atoms/TextField";
 import { Article } from "../types";
@@ -12,6 +14,7 @@ type Props = {
   handleChangeTitle: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleChangeBody: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleChangeDate: (newValue: Dayjs | null) => void;
+  handleDeleteArticle: () => void;
 };
 
 export default function InputArticleCard(props: Props) {
@@ -27,12 +30,18 @@ export default function InputArticleCard(props: Props) {
     handleChangeTitle,
     handleChangeBody,
     handleChangeDate,
+    handleDeleteArticle,
   } = props;
 
-  // TODO 削除機能を追加
   return (
     <Card sx={{ maxWidth: "lg" }}>
       <CardContent>
+        <Stack direction="row" justifyContent="end">
+          <IconButton aria-label="delete" onClick={handleDeleteArticle}>
+            <DeleteForeverOutlinedIcon />
+          </IconButton>
+        </Stack>
+
         <TextField
           label="Title"
           // TODO スタイルをどこで指定すべきか？検討

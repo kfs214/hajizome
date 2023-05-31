@@ -37,10 +37,9 @@ function ArticleComponent({ title, body, id, date }: Article) {
 
   const formattedDateStr = composeDateStr(date);
 
-  // TODO .item:first-child の余白あて方改善
   return (
     <div id={`${id}`}>
-      <div className="item">{bodyJSX}</div>
+      <div className="card">{bodyJSX}</div>
       <p className="date">{formattedDateStr}</p>
     </div>
   );
@@ -59,7 +58,7 @@ export default function generateHTML(articles: Article[]) {
 
   const renderedEyeCatches = renderToString(<div>{eyeCatches}</div>);
   // eslint-disable-next-line react/jsx-no-useless-fragment
-  const renderedArticles = renderToString(<>{composedArticles}</>);
+  const renderedArticles = renderToString(<div>{composedArticles}</div>);
 
   const composedPost = `${renderedEyeCatches}
   <!--more-->

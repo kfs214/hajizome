@@ -23,12 +23,12 @@ export default function Articles(props: Props) {
 
   const [articles, setArticles] = useState(initialArticles);
 
-  // TODO dateの初期値は最新のものと同じ日付
   const handleAddArticle = () => {
+    const { date: lastArticleDate } = articles.slice(-1)[0];
     setArticles((prev) => [
       ...prev,
       // eslint-disable-next-line no-plusplus
-      { id: nextId++, title: "", body: "", date: null },
+      { id: nextId++, title: "", body: "", date: lastArticleDate },
     ]);
   };
 

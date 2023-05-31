@@ -34,11 +34,16 @@ export default function Articles(props: Props) {
 
   return (
     <>
-      <GeneratedHTMLModal
-        showGeneratedHTMLCard={showGeneratedHTMLCard}
-        setShowGeneratedHTMLCard={setShowGeneratedHTMLCard}
-        articles={articles}
-      />
+      {/*
+       * Modalのpropsとして開閉フラグを渡すこともできるが、
+       * 不要なHTML生成を抑制するため開閉フラグで描画制御
+       */}
+      {showGeneratedHTMLCard && (
+        <GeneratedHTMLModal
+          setShowGeneratedHTMLCard={setShowGeneratedHTMLCard}
+          articles={articles}
+        />
+      )}
       <Box p={1} pb={12}>
         <ArticleCards articles={articles} setArticles={setArticles} />
         <AddArticle handleAddArticle={handleAddArticle} />

@@ -7,12 +7,11 @@ import generateHTML from "@/app/utils/generateHTML";
 
 type Props = {
   articles: Article[];
-  showGeneratedHTMLCard: boolean;
   setShowGeneratedHTMLCard: Dispatch<SetStateAction<boolean>>;
 };
 
 function GeneratedHTMLModal(props: Props) {
-  const { articles, showGeneratedHTMLCard, setShowGeneratedHTMLCard } = props;
+  const { articles, setShowGeneratedHTMLCard } = props;
 
   const closeModal = () => {
     setShowGeneratedHTMLCard(false);
@@ -26,7 +25,7 @@ function GeneratedHTMLModal(props: Props) {
 
   // TODO 高さ指定を動的に
   return (
-    <Modal open={showGeneratedHTMLCard} closeModal={closeModal}>
+    <Modal open closeModal={closeModal}>
       <TextField
         margin="normal"
         sx={{ width: "100%" }}

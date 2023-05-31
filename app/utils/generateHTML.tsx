@@ -15,6 +15,7 @@ ${bodyMD}`;
 
 function composeDateStr(date: Dayjs | null) {
   if (!date) return "";
+  if (!date.isValid()) return "";
 
   const yearStr = new Intl.DateTimeFormat("ja-JP-u-ca-japanese", {
     era: "long",

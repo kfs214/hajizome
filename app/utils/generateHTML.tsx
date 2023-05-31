@@ -6,6 +6,8 @@ import prettier from "prettier/standalone";
 import { renderToString } from "react-dom/server";
 import { Article } from "@/app/components/types";
 
+// TODO コンテンツにHTMLとして解釈できる内容が含まれる場合のエスケープ
+// LINEに連携する際にはデコード
 function composeMD({ title, body }: Partial<Article>) {
   const bodyMD = body?.replace(/\r\n|\n|\r/g, "  \n");
   return `##### ${title}
@@ -21,7 +23,7 @@ function composeDateStr(date: Dayjs | null) {
     era: "long",
     year: "numeric",
   }).format(date.toDate());
-  const monthDateStr = date.format("MM月DD日(ddd)");
+  const monthDateStr = date.format("M月D日(ddd)");
   const formattedDateStr = `${yearStr}${monthDateStr}`;
 
   return formattedDateStr;

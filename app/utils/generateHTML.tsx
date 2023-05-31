@@ -7,7 +7,7 @@ import { renderToString } from "react-dom/server";
 import { Article } from "@/app/components/types";
 
 function composeMD({ title, body }: Partial<Article>) {
-  const bodyMD = body?.replace(/\r\n|\n|\r/g, "  ");
+  const bodyMD = body?.replace(/\r\n|\n|\r/g, "  \n");
   return `##### ${title}
 
 ${bodyMD}`;
@@ -29,8 +29,6 @@ function composeDateStr(date: Dayjs | null) {
 function ArticleComponent({ title, body, id, date }: Article) {
   const composedMD = composeMD({ title, body });
 
-  // TODO 空行でpタグ
-  // TODO 文中のhタグ
   const bodyHTML = marked.parse(composedMD, {
     headerIds: false,
     mangle: false,

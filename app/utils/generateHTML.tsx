@@ -61,12 +61,18 @@ export default function generateHTML(articles: Article[]) {
 
   const renderedEyeCatches = renderToString(<div>{eyeCatches}</div>);
   // eslint-disable-next-line react/jsx-no-useless-fragment
-  const renderedArticles = renderToString(<div>{composedArticles}</div>);
+  const renderedArticles = renderToString(
+    <div>{composedArticles}</div>
+  ).replace(
+    /<a\s+href=/g,
+    '<a  target="_blank" rel="noopener noreferrer" href='
+  );
 
   const composedPost = `${renderedEyeCatches}
   <!--more-->
   ${renderedArticles}`;
 
+  // TODO 空白で改行されるのを回避。WP上で\nが<br />になってしまう
   const formattedPost = prettier.format(composedPost, {
     parser: "html",
     plugins: [htmlParser],

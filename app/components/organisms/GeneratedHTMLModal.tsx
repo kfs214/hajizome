@@ -20,7 +20,6 @@ function GeneratedHTMLModal(props: Props) {
   // TODO copy to clipboard
   // TODO モーダルの幅指定要領
   // TODO 長ければスクロール
-  // TODO 曜日の日本語化対応
   // TODO 抜粋生成
   const generatedHTML = generateHTML(articles);
   return (

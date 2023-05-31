@@ -1,5 +1,6 @@
 "use client";
 
+import "dayjs/locale/ja";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { LocalizationProvider } from "@mui/x-date-pickers";
@@ -15,7 +16,7 @@ export default function Home() {
 
   return (
     <ThemeProvider theme={theme}>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="ja">
         <CssBaseline />
         <header>
           <AppBar

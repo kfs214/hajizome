@@ -19,6 +19,7 @@ function GeneratedHTMLModal(props: Props) {
 
   // TODO copy to clipboard
   // TODO モーダルの幅指定要領
+  // TODO 長ければスクロール
   const generatedHTML = generateHTML(articles);
   return (
     <Modal open={showGeneratedHTMLCard} closeModal={closeModal}>

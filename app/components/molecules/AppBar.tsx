@@ -19,6 +19,7 @@ export default function HAjizomeAppBar(props: Props) {
     setShowGeneratedHTMLCard((prev) => !prev);
   };
 
+  // TODO Sticky
   return (
     <Box sx={{ flexGrow: 1 }}>
       <MUIAppBar position="static">

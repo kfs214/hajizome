@@ -28,6 +28,9 @@ function composeDateStr(date: Dayjs | null) {
 
 function ArticleComponent({ title, body, id, date }: Article) {
   const composedMD = composeMD({ title, body });
+
+  // TODO 空行でpタグ
+  // TODO 文中のhタグ
   const bodyHTML = marked.parse(composedMD, {
     headerIds: false,
     mangle: false,

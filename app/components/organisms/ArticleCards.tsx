@@ -21,10 +21,17 @@ function composeNewArticles(prevArticles: Article[], updatedArticle: Article) {
   });
 }
 
-function composeErrorMessage(updatedValue: string | Dayjs | null) {
-  if (!updatedValue) {
-    return "This field is Required.";
-  }
+// TODO メッセージ共通化
+// TODO ロジック共通化
+function composeDateErrorMessage(updatedValue: Dayjs | null) {
+  if (!updatedValue) return "This field is Required.";
+  if (!updatedValue.isValid()) return "invalid date";
+
+  return undefined;
+}
+
+function composeBodyErrorMessage(updatedValue: string) {
+  if (!updatedValue) return "This field is Required.";
 
   return undefined;
 }
@@ -49,7 +56,7 @@ export default function ArticleCards(props: Props) {
     const handleChangeBody = ({
       target: { value },
     }: React.ChangeEvent<HTMLInputElement>) => {
-      const bodyErrorMessage = composeErrorMessage(value);
+      const bodyErrorMessage = composeBodyErrorMessage(value);
       const updatedArticle = {
         ...cardArticle,
         body: value,
@@ -60,7 +67,7 @@ export default function ArticleCards(props: Props) {
     };
 
     const handleChangeDate = (newValue: Dayjs | null) => {
-      const dateErrorMessage = composeErrorMessage(newValue);
+      const dateErrorMessage = composeDateErrorMessage(newValue);
       const updatedArticle = {
         ...cardArticle,
         date: newValue,

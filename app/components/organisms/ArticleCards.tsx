@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Dayjs } from "dayjs";
-import { Dispatch } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 // TODO パスの指定方法を統一
 import InputArticleCard from "./InputArticleCard";
@@ -8,7 +8,7 @@ import { Article } from "@/app/components/types";
 
 type Props = {
   articles: Article[];
-  setArticles: Dispatch<React.SetStateAction<Article[]>>;
+  setArticles: Dispatch<SetStateAction<Article[]>>;
 };
 
 function composeNewArticles(prevArticles: Article[], updatedArticle: Article) {
@@ -21,10 +21,17 @@ function composeNewArticles(prevArticles: Article[], updatedArticle: Article) {
   });
 }
 
-function composeErrorMessage(updatedValue: string | Dayjs | null) {
-  if (!updatedValue) {
-    return "This field is Required.";
-  }
+// TODO メッセージ共通化
+// TODO ロジック共通化
+function composeDateErrorMessage(updatedValue: Dayjs | null) {
+  if (!updatedValue) return "This field is Required.";
+  if (!updatedValue.isValid()) return "invalid date";
+
+  return undefined;
+}
+
+function composeBodyErrorMessage(updatedValue: string) {
+  if (!updatedValue) return "This field is Required.";
 
   return undefined;
 }
@@ -49,7 +56,7 @@ export default function ArticleCards(props: Props) {
     const handleChangeBody = ({
       target: { value },
     }: React.ChangeEvent<HTMLInputElement>) => {
-      const bodyErrorMessage = composeErrorMessage(value);
+      const bodyErrorMessage = composeBodyErrorMessage(value);
       const updatedArticle = {
         ...cardArticle,
         body: value,
@@ -60,7 +67,7 @@ export default function ArticleCards(props: Props) {
     };
 
     const handleChangeDate = (newValue: Dayjs | null) => {
-      const dateErrorMessage = composeErrorMessage(newValue);
+      const dateErrorMessage = composeDateErrorMessage(newValue);
       const updatedArticle = {
         ...cardArticle,
         date: newValue,
@@ -70,6 +77,11 @@ export default function ArticleCards(props: Props) {
       setArticles(newArticles);
     };
 
+    const handleDeleteArticle = () => {
+      const restArticles = articles.filter(({ id }) => id !== cardArticle.id);
+      setArticles(restArticles);
+    };
+
     return (
       <Box sx={{ my: 2 }} key={cardArticle.id}>
         <InputArticleCard
@@ -77,6 +89,7 @@ export default function ArticleCards(props: Props) {
           handleChangeTitle={handleChangeTitle}
           handleChangeBody={handleChangeBody}
           handleChangeDate={handleChangeDate}
+          handleDeleteArticle={handleDeleteArticle}
         />
       </Box>
     );
